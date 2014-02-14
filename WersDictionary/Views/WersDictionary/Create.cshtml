@@ -1,0 +1,44 @@
+﻿@model WersDictionary.Models.WersItem
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>WersItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FamilyCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FamilyCode)
+            @Html.ValidationMessageFor(model => model.FamilyCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FamilyDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FamilyDescription)
+            @Html.ValidationMessageFor(model => model.FamilyDescription)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
