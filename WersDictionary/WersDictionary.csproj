@@ -263,6 +263,7 @@
     <Content Include="Views\WersDictionary\Create.cshtml" />
     <Content Include="Views\WersDictionary\Edit.cshtml" />
     <Content Include="Views\WersDictionary\Delete.cshtml" />
+    <Content Include="Views\WersDictionary\SearchIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WersDictionary.Models.WersItem>
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<h2>SearchIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("SearchIndex","WersDictionary",FormMethod.Get))
+    {
+        <p>Genre: @Html.DropDownList("movieGenre", "All")  
+           Title: @Html.TextBox("SearchString")
+            <input type="submit" value="Filter" /></p>
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
